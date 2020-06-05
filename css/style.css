@@ -326,7 +326,6 @@ post-header-user  {
 }
 
 .create-post-input  {
-    width: 100%;
     margin-top: 8px;
     margin-left: 8px;
     color: #8C8C8C;
@@ -894,6 +893,10 @@ input[type=radio]:checked+label {
 }
 
 @media (max-width: 480px)  {
+    body  {
+        padding-top: 112px;
+    }
+
     .header  {
         padding: 14px 0;
     }
