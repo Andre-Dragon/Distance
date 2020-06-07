@@ -235,6 +235,10 @@ post-header-user  {
     align-items: center;
 }
 
+.menu-sidebar-user  {
+    padding-bottom: 4px;
+}
+
 .user-avatar  {
     margin-right: 8px;
     object-fit: cover;
@@ -1005,7 +1009,7 @@ input[type=radio]:checked+label {
     }
 
     .menu-sidebar-user  {
-        padding-bottom: 8px;
+        padding-bottom: 10px;
     }
 
     .nav-groups  {
