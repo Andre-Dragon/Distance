@@ -1142,6 +1142,15 @@ input[type=radio]:checked+label {
         width: 40%;
         margin-bottom: 16px;
     }
+
+    .post-share:after  {
+        right: 78px;
+    }
+
+    .post-share-link  {
+        line-height: 20px;
+    }
+
 }
 
 @media (max-width: 480px)  {
@@ -1177,5 +1186,17 @@ input[type=radio]:checked+label {
     .tag:last-child   {
         margin-right: 0;
         width: 50%;
+    }
+
+    .post-share  {
+        width: 210px;
+    }
+
+    .post-share:after  {
+        right: 58px;
+    }
+
+    .post-share-link  {
+        line-height: 18px;
     }
 }

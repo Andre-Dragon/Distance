@@ -12,12 +12,12 @@ hamburger.addEventListener('click', () => {
 });
 
 shareButton.addEventListener('click', () => {
-        postShare.classList.toggle('open-share');    
+    postShare.classList.toggle('open-share');    
 });
 
 
 container.addEventListener('click', event => {
-        const target = event.target;
+    const target = event.target;
         if (!target.closest('.menu-sidebar')) {
             menu.classList.remove('openMenu');
             hamburger.classList.remove('open');
