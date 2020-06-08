@@ -171,14 +171,6 @@ body  {
     border-radius: 10px;
 }
 
-.openMenu {
-    overflow: hidden;
-    -webkit-transition: .5s cubic-bezier(.8, .5, .2, 1.4);
-    -o-transition: .5s cubic-bezier(.8, .5, .2, 1.4);
-    transition: .5s cubic-bezier(.8, .5, .2, 1.4);
-}
-
-
 .search  {
     display: flex;
     align-items: center;
@@ -384,7 +376,8 @@ post-header-user  {
     padding: 4px 8px;
     fill: #BFBFBF;
     background-color: transparent;
-    border: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
     outline: none;
 }
 
@@ -418,6 +411,7 @@ post-header-user  {
 .main-feed  {
     width: 100%;
     max-width: 588px;
+    position: relative;
 }
 
 .create-post  {
@@ -514,12 +508,18 @@ post-header-user  {
     border-radius: 4px;
     margin: 16px 0;
     padding: 16px;
+    position: relative;
 }
 
 .post-header  {
     display: flex;
     justify-content: space-between;
     margin-bottom: 16px;
+}
+
+.post-header-user  {
+    display: flex;
+    align-items: center;
 }
 
 .post-user-avatar  {
@@ -546,6 +546,7 @@ post-header-user  {
     background-color: #fff;
     border: none;
     outline: none;
+    height: 24px;
 }
 
 .post-time  {
@@ -593,6 +594,59 @@ post-header-user  {
     border: 1px solid #bfbfbf;
     border-radius: 4px;
 }
+
+.post-header-button > .popur-window  {
+    top: -30px;
+    right: 15px;
+}
+
+.fanpage-header-button > .popur-window  {
+    top: -38px;
+    right: 15px;
+}
+
+.post-header-button > .popur-window:after,
+.fanpage-header-button > .popur-window:after  {
+    top: 38px;
+    right: 15px;
+}
+
+.post-header-button:hover .popur-window,
+.fanpage-header-button:hover .popur-window  {
+    display: block;
+    animation: showRight .5s;
+}
+
+.popur-window,
+.popur-window:after,
+.post-share,
+.post-share:after  {
+    position: absolute;
+    z-index: 10;
+}
+
+.popur-window  {
+    display: none;
+    width: 80px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    padding: 8px 8px;
+    border-radius: 4px;
+}
+
+.popur-window:after  {
+    content: '';
+    border-top: 7px solid rgba(0, 0, 0, 0.8);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+}
+
+.popur-window-text  {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #FFFFFF;
+}    
 
 .likes  {
     display: flex;
@@ -644,6 +698,45 @@ post-header-user  {
     font-size: 14px;
     line-height: 22px;
     margin-left: 8px;
+}
+
+.post-share  {
+    display: none;
+    bottom: 56px;
+    right: 13px;
+    width: 220px;
+    height: auto;
+    border-radius: 4px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.open-share  {
+    display: block;
+}
+
+.post-share:after  {
+    content: '';
+    bottom: -10px;
+    right: 100px;
+    border-top: 10px solid rgb(255, 255, 255);
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.post-share-list  {
+    display: block;
+    padding: 8px 0;
+}
+
+.post-share-link  {
+    display: block;
+    padding: 5px 12px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 22px;
+    color: #595959;
+    text-decoration: none;
 }
 
 .aside  {
@@ -807,6 +900,7 @@ post-header-user  {
     justify-content: space-between;
     padding: 9px 16px;
     border-bottom: 2px solid #e8e8e8;
+    position: relative;
 }
 
 .fanpage-title  {
@@ -936,6 +1030,14 @@ input[type=radio]:checked+label {
     color: #8C8C8C;
 }
 
+@keyframes showRight {
+
+    from {right:35px;}
+    
+    to {right:15px;}
+    
+    }
+
 @media (max-width: 1250px)  {
     .container  {
         justify-content: space-around;
@@ -984,7 +1086,7 @@ input[type=radio]:checked+label {
         top: 50px;
         width: 100%;
         max-width: 250px;
-        height: 100%;
+        height: 100vh;
         background-color: #f5f5f5;
         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
         padding-top: 12px;
@@ -997,7 +1099,7 @@ input[type=radio]:checked+label {
 
     }
 
-    .menu-sidebar.openMenu  {
+    .openMenu  {
         transform: translateX(0%);
         -webkit-transition: .5s cubic-bezier(.8, .5, .2, 1.4);
         -o-transition: .5s cubic-bezier(.8, .5, .2, 1.4);
